@@ -1,4 +1,4 @@
-# Study Mate – Student Academic Task Organizer
+# Student Academic Task Organizer
 
 **A desktop application designed to help students organize academic tasks, plan study activities, manage deadlines, and monitor productivity.**
 
