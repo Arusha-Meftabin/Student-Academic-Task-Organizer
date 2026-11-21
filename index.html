@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Mate - Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CUSTOM STUDY MATE TITLE BAR -->
+<div class="custom-titlebar">
+
+    <div class="titlebar-brand">
+        <img src="icon.ico" alt="Study Mate">
+        <span>Study Mate</span>
+    </div>
+
+    <div class="titlebar-controls">
+
+        <button id="minimizeWindow" title="Minimize">
+            &#8722;
+        </button>
+
+        <button id="maximizeWindow" title="Maximize">
+            &#9633;
+        </button>
+
+        <button id="closeWindow" class="close-window" title="Close">
+            &#10005;
+        </button>
+
+    </div>
+
+</div>
+<!-- FIRST-TIME WELCOME SCREEN -->
+<div id="welcomeScreen" class="welcome-overlay" style="display:none;">
+    <div class="welcome-card">
+        <h1>Welcome to Study Mate!</h1>
+        <p>Your personal academic organizer.</p>
+
+        <label for="welcomeNameInput">What should we call you?</label>
+        <input
+            type="text"
+            id="welcomeNameInput"
+            placeholder="Enter your name"
+            maxlength="60"
+        >
+
+        <button type="button" id="startStudyMate">
+            Get Started
+        </button>
+    </div>
+</div>
+<div class="app-container">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Study Mate</h2>
+            <p>Student Organizer</p>
+        </div>
+
+        <nav>
+            <p class="menu-title">MAIN MENU</p>
+            <a href="#" class="nav-link active" id="navDashboard">Dashboard</a>
+            <a href="#" class="nav-link" id="navTasks">My Tasks</a>
+            <a href="#" class="nav-link" id="navSubjects">Subjects</a>
+            <a href="#" class="nav-link" id="navStudyPlanner">Study Planner</a>
+            <a href="#" class="nav-link" id="navCalendar">Calendar</a>
+
+            <p class="menu-title">PRODUCTIVITY</p>
+            <a href="#" class="nav-link" id="navExams">Exam Countdown</a>
+            <a href="#" class="nav-link" id="navAnalytics">Analytics</a>
+            <a href="#" class="nav-link" id="navSettings">Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Study Mate © 2026 | Developed by Arusha Meftabin</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- DASHBOARD -->
+        <div id="dashboardView">
+            <header class="topbar">
+                <div>
+                    <h2>Dashboard</h2>
+                    <p id="dashboardWelcome">Welcome back! Here's your academic overview.</p>
+                </div>
+                <div class="profile">
+                    <span class="student-name-display">Student</span>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <p>Total Tasks</p>
+                    <h2 id="totalTasks">0</h2>
+                    <span>All academic tasks</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Completed</p>
+                    <h2 id="completedTasks">0</h2>
+                    <span>Successfully finished</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pending</p>
+                    <h2 id="pendingTasks">0</h2>
+                    <span>Waiting to be completed</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Overdue</p>
+                    <h2 id="overdueTasks">0</h2>
+                    <span>Past deadline</span>
+                </div>
+            </section>
+            <!-- QUICK ACTIONS -->
+<section class="quick-actions">
+    <h3>Quick Actions</h3>
+    <p>Get started with your academic activities.</p>
+
+    <div class="quick-actions-grid">
+        <button type="button" id="quickAddTask">+ Add Task</button>
+        <button type="button" id="quickAddSubject">+ Add Subject</button>
+        <button type="button" id="quickAddSession">+ Add Study Session</button>
+    </div>
+</section>
+        </div>
+
+        <!-- TASKS -->
+        <section class="task-section" id="myTasksSection" style="display:none;">
+
+            <div class="section-header">
+                <div>
+                    <h2>My Academic Tasks</h2>
+                    <p>Manage your assignments and study activities.</p>
+                </div>
+                <button id="addTaskButton">+ Add New Task</button>
+            </div>
+
+            <div class="task-form" id="taskForm">
+                <h3 id="formTitle">Add New Task</h3>
+
+                <form id="academicTaskForm">
+
+                    <div class="form-group">
+                        <label for="taskTitle">Task Title</label>
+                        <input type="text" id="taskTitle" placeholder="Enter task title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskSubject">Subject</label>
+                        <select id="taskSubject" required>
+                            <option value="">Select a subject</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskType">Task Type</label>
+                        <select id="taskType">
+                            <option>Assignment</option>
+                            <option>Homework</option>
+                            <option>Lab Report</option>
+                            <option>Study</option>
+                            <option>Exam Preparation</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskDeadline">Deadline</label>
+                        <input type="date" id="taskDeadline" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option>Low</option>
+                            <option selected>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" id="saveTaskButton">Save Task</button>
+                        <button type="button" id="cancelTaskButton">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="task-controls">
+                <input type="text" id="searchTask" placeholder="Search tasks...">
+
+                <select id="filterStatus">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+            </div>
+
+            <div class="task-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Subject</th>
+                            <th>Deadline</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="taskTableBody">
+                        <tr>
+                            <td colspan="6">No tasks added yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- SUBJECTS -->
+        <section class="subject-section" id="subjectView" style="display:none;">
+
+            <header class="topbar">
+                <div>
+                    <h2>Subject Management</h2>
+                    <p>Organize and manage your academic subjects.</p>
+                </div>
+                <div class="profile">
+                    <span class="student-name-display">Student</span>
+                </div>
+            </header>
+
+            <div class="section-header">
+                <div>
+                    <h2>My Subjects</h2>
+                    <p>Add, edit and manage your subjects.</p>
+                </div>
+                <button id="addSubjectButton">+ Add New Subject</button>
+            </div>
+
+            <div class="subject-form" id="subjectForm">
+                <h3 id="subjectFormTitle">Add New Subject</h3>
+
+                <form id="academicSubjectForm">
+
+                    <div class="form-group">
+                        <label for="subjectName">Subject Name</label>
+                        <input type="text" id="subjectName" placeholder="Enter subject name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subjectCode">Subject Code</label>
+                        <input type="text" id="subjectCode" placeholder="Example: CSE 221" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subjectDescription">Description</label>
+                        <input type="text" id="subjectDescription" placeholder="Enter a short description">
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" id="saveSubjectButton">Save Subject</button>
+                        <button type="button" id="cancelSubjectButton">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="subject-controls">
+                <input type="text" id="searchSubject" placeholder="Search subjects...">
+            </div>
+
+            <div class="subject-grid" id="subjectGrid">
+                <p>No subjects added yet.</p>
+            </div>
+
+        </section>
+
+        <!-- STUDY PLANNER -->
+        <section class="planner-section" id="studyPlannerView" style="display:none;">
+
+            <header class="topbar">
+                <div>
+                    <h2>Weekly Study Planner</h2>
+                    <p>Plan your study sessions and organize your week.</p>
+                </div>
+                <div class="profile">
+                    <span class="student-name-display">Student</span>
+                </div>
+            </header>
+
+            <div class="planner-heading">
+                <div>
+                    <h2>My Weekly Timetable</h2>
+                    <p>Create and manage your study schedule.</p>
+                </div>
+                <button id="addSessionButton">+ Add Study Session</button>
+            </div>
+
+            <div class="planner-form" id="plannerForm" style="display:none;">
+                <h3 id="plannerFormTitle">Add Study Session</h3>
+
+                <form id="studySessionForm">
+
+                    <div class="form-group">
+                        <label for="sessionTitle">Session Title</label>
+                        <input type="text" id="sessionTitle" placeholder="Example: Java practice" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionSubject">Subject</label>
+                        <select id="sessionSubject" required>
+                            <option value="">Select a subject</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionDay">Day</label>
+                        <select id="sessionDay" required>
+                            <option>Saturday</option>
+                            <option>Sunday</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionStart">Start Time</label>
+                        <input type="time" id="sessionStart" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionEnd">End Time</label>
+                        <input type="time" id="sessionEnd" required>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" id="saveSessionButton">Save Session</button>
+                        <button type="button" id="cancelSessionButton">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="weekly-timetable" id="weeklyTimetable">
+
+                <div class="day-column" data-day="Saturday">
+                    <h3>Saturday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+                <div class="day-column" data-day="Sunday">
+                    <h3>Sunday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+                <div class="day-column" data-day="Monday">
+                    <h3>Monday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+                <div class="day-column" data-day="Tuesday">
+                    <h3>Tuesday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+                <div class="day-column" data-day="Wednesday">
+                    <h3>Wednesday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+                <div class="day-column" data-day="Thursday">
+                    <h3>Thursday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+                <div class="day-column" data-day="Friday">
+                    <h3>Friday</h3>
+                    <div class="session-list"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALENDAR -->
+        <section class="calendar-section" id="calendarView" style="display:none;">
+
+            <div class="calendar-heading">
+                <div>
+                    <h2>Task Calendar</h2>
+                    <p>View your academic tasks by deadline.</p>
+                </div>
+                <button id="todayButton" type="button">Today</button>
+            </div>
+
+            <div class="calendar-container">
+
+                <div class="calendar-top">
+                    <h3 id="calendarMonthYear">November 2026</h3>
+
+                    <div class="calendar-controls">
+                        <button id="prevMonthButton" type="button">&#10094;</button>
+                        <button id="nextMonthButton" type="button">&#10095;</button>
+                    </div>
+                </div>
+
+                <div class="calendar-weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+
+                <div class="calendar-days" id="calendarDays"></div>
+
+            </div>
+
+            <div class="calendar-legend">
+                <span><i class="legend-dot pending-dot"></i> Pending</span>
+                <span><i class="legend-dot completed-dot"></i> Completed</span>
+                <span><i class="legend-dot overdue-dot"></i> Overdue</span>
+            </div>
+
+            <div class="selected-date-section">
+                <h3 id="selectedDateTitle">Select a date</h3>
+                <div id="selectedDateTasks">
+                    <p class="no-calendar-task">Select a date to view its tasks.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- EXAM COUNTDOWN -->
+        <section class="exam-section" id="examView" style="display:none;">
+
+            <header class="topbar">
+                <div>
+                    <h2>Exam Countdown</h2>
+                    <p>Keep track of your upcoming examinations.</p>
+                </div>
+                <div class="profile">
+                    <span class="student-name-display">Student</span>
+                </div>
+            </header>
+
+            <div class="section-header">
+                <div>
+                    <h2>My Exams</h2>
+                    <p>Manage your exam schedule and preparation.</p>
+                </div>
+                <button type="button" id="addExamButton">+ Add New Exam</button>
+            </div>
+
+            <div class="exam-form" id="examForm" style="display:none;">
+                <h3 id="examFormTitle">Add New Exam</h3>
+
+                <form id="academicExamForm">
+
+                    <div class="form-group">
+                        <label for="examName">Exam Name</label>
+                        <input type="text" id="examName" placeholder="Example: Java Final Exam" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="examSubject">Subject</label>
+                        <select id="examSubject" required>
+                            <option value="">Select a subject</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="examDate">Exam Date</label>
+                        <input type="date" id="examDate" required>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" id="saveExamButton">Save Exam</button>
+                        <button type="button" id="cancelExamButton">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="exam-controls">
+                <input type="text" id="searchExam" placeholder="Search exams...">
+
+                <select id="filterExam">
+                    <option value="all">All Exams</option>
+                    <option value="upcoming">Upcoming</option>
+                    <option value="completed">Completed</option>
+                    <option value="passed">Date Passed</option>
+                </select>
+            </div>
+
+            <div class="exam-grid" id="examGrid">
+                <p>No exams added yet.</p>
+            </div>
+
+        </section>
+
+        <!-- ANALYTICS -->
+        <section class="analytics-section" id="analyticsView" style="display:none;">
+
+            <header class="topbar">
+                <div>
+                    <h2>Study Analytics</h2>
+                    <p>Understand your academic progress and task performance.</p>
+                </div>
+                <div class="profile">
+                    <span class="student-name-display">Student</span>
+                </div>
+            </header>
+
+            <div class="analytics-summary">
+
+                <div class="analytics-stat">
+                    <p>Total Tasks</p>
+                    <h2 id="analyticsTotal">0</h2>
+                    <span>Tasks in your list</span>
+                </div>
+
+                <div class="analytics-stat green-stat">
+                    <p>Completed Tasks</p>
+                    <h2 id="analyticsCompleted">0</h2>
+                    <span>Successfully finished</span>
+                </div>
+
+                <div class="analytics-stat pink-stat">
+                    <p>Remaining Tasks</p>
+                    <h2 id="analyticsRemaining">0</h2>
+                    <span>Not completed yet</span>
+                </div>
+
+                <div class="analytics-stat">
+                    <p>Completion Rate</p>
+                    <h2 id="analyticsRate">0%</h2>
+                    <span>Overall progress</span>
+                </div>
+
+            </div>
+
+            <div class="analytics-panel">
+                <div class="panel-heading">
+                    <h3>Overall Completion</h3>
+                    <p>Percentage of tasks marked as completed.</p>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="completionProgress"></div>
+                </div>
+
+                <p class="progress-caption" id="completionCaption">
+                    0 of 0 tasks completed
+                </p>
+            </div>
+
+            <div class="analytics-two-column">
+
+                <div class="analytics-panel">
+                    <div class="panel-heading">
+                        <h3>Tasks by Subject</h3>
+                        <p>Compare your workload across subjects.</p>
+                    </div>
+
+                    <div id="subjectAnalytics" class="subject-analytics">
+                        <p class="analytics-empty">No subject data available yet.</p>
+                    </div>
+                </div>
+
+                <div class="analytics-panel">
+                    <div class="panel-heading">
+                        <h3>Task Status</h3>
+                        <p>How your tasks are currently distributed.</p>
+                    </div>
+
+                    <div id="statusAnalytics" class="status-analytics"></div>
+                </div>
+
+            </div>
+
+            <div class="analytics-panel">
+                <div class="panel-heading">
+                    <h3>Weekly Task Deadlines</h3>
+                    <p>Tasks grouped by their deadline weekday for the current week.</p>
+                </div>
+
+                <div id="weeklyAnalytics" class="weekly-analytics"></div>
+
+                <p class="analytics-note">
+                    This chart uses task deadlines. It does not represent the date a task was actually completed.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="settings-section" id="settingsView" style="display:none;">
+
+            <header class="topbar">
+                <div>
+                    <h2>Settings</h2>
+                    <p>Manage your Study Mate preferences.</p>
+                </div>
+
+                <div class="profile">
+                    <span class="student-name-display">Student</span>
+                </div>
+            </header>
+
+            <!-- STUDENT PROFILE -->
+            <div class="analytics-panel">
+
+                <h3>Student Profile</h3>
+
+                <p>Enter your name to personalize your Study Mate dashboard.</p>
+
+                <form id="studentProfileForm">
+
+                    <div class="form-group">
+                        <label for="studentNameInput">Student Name</label>
+
+                        <input
+                            type="text"
+                            id="studentNameInput"
+                            placeholder="Enter your full name"
+                            maxlength="60"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Name</button>
+                    </div>
+
+                </form>
+
+                <p id="profileSaveMessage" class="settings-note"></p>
+
+            </div>
+
+            <!-- LOCAL DATA -->
+            <div class="analytics-panel">
+
+                <h3>Local Data</h3>
+
+                <p>Your tasks, subjects, study sessions and exams are saved in this computer's browser storage.</p>
+
+                <p class="settings-note">
+                    Study Mate currently works without an online database.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+<!-- Undo Delete Notification -->
+<div id="undoToast" class="undo-toast" role="status" aria-live="polite">
+    <span id="undoToastMessage">Item deleted.</span>
+    <button id="undoDeleteButton" type="button">Undo</button>
+</div>
+<script src="js/script.js"></script>
+
+</body>
+</html>
