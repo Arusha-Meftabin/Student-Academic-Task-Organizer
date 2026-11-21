@@ -44,7 +44,8 @@
 "linux": {
   "icon": "icon.png",
   "target": ["AppImage", "deb"],
-  "category": "Education"
+  "category": "Education",
+  "maintainer": "Study Mate Team"
 }
   }
 }
