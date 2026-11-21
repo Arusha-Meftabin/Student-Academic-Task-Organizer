@@ -57,33 +57,43 @@ The application follows a simple desktop architecture:
 ## 5. Features
 
 ### 5.1 Academic Task Management
+
 Create and manage academic tasks such as assignments, projects, and other study activities.
 
 ### 5.2 Weekly Study Planner
+
 Organize study activities and plan learning sessions throughout the week.
 
 ### 5.3 Priority Management
+
 Set task priorities to identify important academic responsibilities.
 
 ### 5.4 Subject Management
+
 Organize academic tasks according to their subjects.
 
 ### 5.5 Exam Countdown
+
 Keep track of upcoming examinations and the remaining days.
 
 ### 5.6 Task Calendar
+
 View academic tasks and deadlines in a calendar format.
 
 ### 5.7 Productivity Analytics
+
 Review study activity and task progress through productivity information.
 
 ### 5.8 Daily Study Tracker
+
 Keep track of daily study activities and study sessions.
 
 ### 5.9 Overdue Alerts
+
 Identify tasks that have passed their deadlines.
 
 ### 5.10 Backup and Restore
+
 Support backing up and restoring locally stored application information.
 
 ## 6. Project Structure
@@ -97,6 +107,14 @@ Student-Academic-Task-Organizer/
 ├── js/
 │   └── Application JavaScript files
 │
+├── screenshots/
+│   ├── dashboard.png
+│   ├── task-manager.png
+│   ├── study-planner.png
+│   ├── exam-countdown.png
+│   ├── analytics.png
+│   └── settings.png
+│
 ├── index.html
 ├── main.js
 ├── preload.js
@@ -109,9 +127,31 @@ Student-Academic-Task-Organizer/
 
 ## 7. Results and Visualizations
 
-This section presents screenshots of the Study Mate application, including its dashboard and major academic management features.
+The following screenshots show the user interface and different sections of the Study Mate application.
 
-Screenshots will be added to the repository as the application interface is documented.
+### 7.1 Dashboard
+
+![Study Mate Dashboard](screenshots/dashboard.png)
+
+### 7.2 Academic Task Manager
+
+![Task Manager](screenshots/task-manager.png)
+
+### 7.3 Weekly Study Planner
+
+![Weekly Study Planner](screenshots/study-planner.png)
+
+### 7.4 Exam Countdown
+
+![Exam Countdown](screenshots/exam-countdown.png)
+
+### 7.5 Productivity Analytics
+
+![Productivity Analytics](screenshots/analytics.png)
+
+### 7.6 Settings
+
+![Study Mate Settings](screenshots/settings.png)
 
 ## 8. Discussion
 
@@ -122,3 +162,5 @@ The application brings together task management, study planning, examination tra
 ## 9. Conclusion
 
 Study Mate demonstrates how a desktop application can help students organize their academic responsibilities more effectively. It combines several useful study management features in one simple application.
+
+The project provides an opportunity to apply HTML, CSS, JavaScript, and Electron.js to develop a practical desktop application for students.
