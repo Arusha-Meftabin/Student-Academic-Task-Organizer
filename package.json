@@ -38,11 +38,13 @@
       "allowToChangeInstallationDirectory": true
     },
     "mac": {
-      "target": ["dmg", "zip"]
-    },
-    "linux": {
-      "target": ["AppImage", "deb"],
-      "category": "Education"
-    }
+  "icon": "icon.icns",
+  "target": ["dmg", "zip"]
+},
+"linux": {
+  "icon": "icon.png",
+  "target": ["AppImage", "deb"],
+  "category": "Education"
+}
   }
 }
