@@ -149,9 +149,6 @@ The following screenshots show the user interface and different sections of the 
 
 ![Productivity Analytics](screenshots/analytics.png)
 
-### 7.6 Settings
-
-![Study Mate Settings](screenshots/settings.png)
 
 ## 8. Discussion
 
