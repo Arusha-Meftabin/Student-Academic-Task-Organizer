@@ -1,0 +1,45 @@
+
+name: Build Study Mate for All Platforms
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            platform: win
+          - os: macos-latest
+            platform: mac
+          - os: ubuntu-latest
+            platform: linux
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build -- --${{ matrix.platform }} --publish never
+
+      - name: Upload installer files
+        uses: actions/upload-artifact@v4
+        with:
+          name: Study-Mate-${{ matrix.platform }}
+          path: dist/*
+          if-no-files-found: error

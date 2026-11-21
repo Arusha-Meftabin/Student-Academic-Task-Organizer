@@ -3,11 +3,46 @@
   "name": "study-mate",
   "version": "1.0.0",
   "description": "Student Academic Task Organizer",
+  "author": "Study Mate",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
   },
   "devDependencies": {
-    "electron": "^45.4.1"
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.studymate.app",
+    "productName": "Study Mate",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!out/**",
+      "!screenshots/**",
+      "!**/.gitignore"
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": ["dmg", "zip"]
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Education"
+    }
   }
 }
