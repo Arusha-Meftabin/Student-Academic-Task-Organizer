@@ -32,7 +32,7 @@ The application focuses on simplicity, easy navigation, and local data storage.
 
 Study Mate is developed using a modular approach. The application interface is created with HTML and CSS, while JavaScript handles application functionality and data management.
 
-Electron.js is used to run the application as a Windows desktop application. Local storage is used to save academic information on the user's computer.
+Electron.js is used to run the application as a Windows desktop application. Local storage is used to save information on the user's computer.
 
 ### 4.1 Technologies Used
 
@@ -102,18 +102,15 @@ Support backing up and restoring locally stored application information.
 Student-Academic-Task-Organizer/
 │
 ├── css/
-│   └── Application stylesheets
-│
 ├── js/
-│   └── Application JavaScript files
-│
 ├── screenshots/
-│   ├── dashboard.png
-│   ├── task-manager.png
-│   ├── study-planner.png
-│   ├── exam-countdown.png
 │   ├── analytics.png
-│   └── settings.png
+│   ├── calender.png
+│   ├── dashboard.png
+│   ├── exam countdown.png
+│   ├── my task.png
+│   ├── study planer.png
+│   └── subjects.png
 │
 ├── index.html
 ├── main.js
@@ -127,28 +124,35 @@ Student-Academic-Task-Organizer/
 
 ## 7. Results and Visualizations
 
-The following screenshots show the user interface and different sections of the Study Mate application.
+The following screenshots demonstrate the user interface and different functionalities of the Study Mate application.
 
 ### 7.1 Dashboard
 
 ![Study Mate Dashboard](screenshots/dashboard.png)
 
-### 7.2 Academic Task Manager
+### 7.2 My Tasks
 
-![Task Manager](screenshots/my task.png)
+![My Tasks](screenshots/my%20task.png)
 
 ### 7.3 Weekly Study Planner
 
-![Weekly Study Planner](screenshots/study vplaner.png)
+![Study Planner](screenshots/study%20planer.png)
 
 ### 7.4 Exam Countdown
 
-![Exam Countdown](screenshots/exam countdown.png)
+![Exam Countdown](screenshots/exam%20countdown.png)
 
-### 7.5 Productivity Analytics
+### 7.5 Calendar
+
+![Academic Calendar](screenshots/calender.png)
+
+### 7.6 Subjects
+
+![Subjects](screenshots/subjects.png)
+
+### 7.7 Productivity Analytics
 
 ![Productivity Analytics](screenshots/analytics.png)
-
 
 ## 8. Discussion
 
@@ -160,4 +164,4 @@ The application brings together task management, study planning, examination tra
 
 Study Mate demonstrates how a desktop application can help students organize their academic responsibilities more effectively. It combines several useful study management features in one simple application.
 
-The project provides an opportunity to apply HTML, CSS, JavaScript, and Electron.js to develop a practical desktop application for students.
+The project also provides practical experience in developing a desktop application using HTML, CSS, JavaScript, and Electron.js.
