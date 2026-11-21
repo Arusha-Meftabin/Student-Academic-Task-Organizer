@@ -135,11 +135,11 @@ The following screenshots show the user interface and different sections of the 
 
 ### 7.2 Academic Task Manager
 
-![Task Manager](screenshots/task-manager.png)
+![Task Manager](screenshots/my-task.png)
 
 ### 7.3 Weekly Study Planner
 
-![Weekly Study Planner](screenshots/study-planner.png)
+![Weekly Study Planner](screenshots/study-planer.png)
 
 ### 7.4 Exam Countdown
 
