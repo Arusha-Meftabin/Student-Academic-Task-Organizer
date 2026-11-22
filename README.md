@@ -1,100 +1,81 @@
-# Student Academic Task Organizer
+# Study Mate – Student Academic Task Organizer
 
-**A desktop application designed to help students organize academic tasks, plan study activities, manage deadlines, and monitor productivity.**
+**A desktop application for managing academic tasks, organizing study schedules, and tracking student productivity.**
 
 ---
 
-## 1. Abstract
+## 1. Project Overview
 
-Study Mate is a desktop-based Student Academic Task Organizer developed to make academic planning easier for students. It provides a single platform to manage assignments, projects, study schedules, subjects, and examination dates.
+Study Mate is a desktop application developed to help students organize their academic activities in one place. It provides tools for managing assignments, projects, study schedules, subjects, and examination dates.
 
-The application is developed using Electron.js, HTML, CSS, and JavaScript. It uses local storage to save information on the user's computer without requiring an external database.
+The application is built with Electron.js, HTML, CSS, and JavaScript. It uses local storage to save application data on the user's computer without requiring an external database.
 
-## 2. Introduction
+## 2. Project Objectives
 
-Students often have difficulty managing assignments, examinations, study schedules, and other academic responsibilities. Keeping track of everything manually can lead to missed deadlines and poor time management.
-
-Study Mate aims to solve this problem by providing an organized desktop application where students can manage their academic activities from one place.
-
-The application focuses on simplicity, easy navigation, and local data storage.
-
-## 3. Objectives
-
-- Develop a desktop-based academic task management application.
-- Help students organize assignments and other academic activities.
+- Develop a desktop application for academic task management.
+- Organize assignments, projects, and other academic activities.
 - Provide a weekly study planning system.
-- Track examination dates and upcoming deadlines.
-- Organize academic tasks by subject and priority.
-- Display productivity information and study progress.
-- Store user information locally on the computer.
+- Track upcoming examinations and academic deadlines.
+- Manage tasks according to subjects and priorities.
+- Display task progress and productivity information.
+- Maintain application data locally on the user's computer.
+- Provide a simple and organized user interface.
 
-## 4. Methodology
-
-Study Mate is developed using a modular approach. The application interface is created with HTML and CSS, while JavaScript handles application functionality and data management.
-
-Electron.js is used to run the application as a Windows desktop application. Local storage is used to save information on the user's computer.
-
-### 4.1 Technologies Used
+## 3. Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| HTML5 | Application structure |
-| CSS3 | Application design and styling |
-| JavaScript | Application functionality |
-| Electron.js | Desktop application framework |
-| Local Storage | Local data storage |
-| Git and GitHub | Version control and project hosting |
+| HTML5 | Structures the application interface. |
+| CSS3 | Handles layout, styling, and visual design. |
+| JavaScript | Implements application functionality and data handling. |
+| Electron.js | Runs the application as desktop software. |
+| Local Storage | Stores application data locally. |
+| Git | Tracks source code changes and project versions. |
+| GitHub | Hosts the project source code and repository. |
 
-### 4.2 System Architecture
+## 4. System Architecture
 
-The application follows a simple desktop architecture:
+Study Mate uses a modular desktop application structure consisting of the following components:
 
-- **User Interface:** Displays the different pages and features.
-- **Application Logic:** Handles tasks, subjects, study plans, examinations, and productivity information.
-- **Local Storage:** Saves application data on the user's computer.
-- **Electron:** Connects the application with the desktop environment.
+- **User Interface:** Displays the dashboard, navigation, and application features.
+- **Application Logic:** Handles task management, subjects, study planning, examinations, and productivity information.
+- **Local Storage:** Stores application information on the user's computer.
+- **Electron Framework:** Provides the desktop environment and connects the application with the operating system.
 
 ## 5. Features
 
-### 5.1 Academic Task Management
+### 5.1 Dashboard
+Provides an overview of academic activities and access to the application's main sections.
 
-Create and manage academic tasks such as assignments, projects, and other study activities.
+### 5.2 Academic Task Management
+Allows users to create, update, organize, and track academic tasks such as assignments and projects.
 
-### 5.2 Weekly Study Planner
+### 5.3 Weekly Study Planner
+Helps users organize study activities throughout the week.
 
-Organize study activities and plan learning sessions throughout the week.
+### 5.4 Priority Management
+Allows users to assign priorities to tasks to identify important academic responsibilities.
 
-### 5.3 Priority Management
+### 5.5 Subject Management
+Provides a way to organize academic tasks according to their subjects.
 
-Set task priorities to identify important academic responsibilities.
+### 5.6 Exam Countdown
+Displays upcoming examination dates and the remaining time before each examination.
 
-### 5.4 Subject Management
+### 5.7 Task Calendar
+Displays academic tasks and deadlines in a calendar format.
 
-Organize academic tasks according to their subjects.
+### 5.8 Productivity Analytics
+Presents information about task progress and recorded study activities.
 
-### 5.5 Exam Countdown
+### 5.9 Daily Study Tracker
+Allows users to record and monitor their daily study sessions.
 
-Keep track of upcoming examinations and the remaining days.
+### 5.10 Overdue Alerts
+Identifies tasks that have passed their assigned deadlines.
 
-### 5.6 Task Calendar
-
-View academic tasks and deadlines in a calendar format.
-
-### 5.7 Productivity Analytics
-
-Review study activity and task progress through productivity information.
-
-### 5.8 Daily Study Tracker
-
-Keep track of daily study activities and study sessions.
-
-### 5.9 Overdue Alerts
-
-Identify tasks that have passed their deadlines.
-
-### 5.10 Backup and Restore
-
-Support backing up and restoring locally stored application information.
+### 5.11 Backup and Restore
+Allows users to back up and restore locally stored application data.
 
 ## 6. Project Structure
 
@@ -122,9 +103,9 @@ Student-Academic-Task-Organizer/
 └── README.md
 ```
 
-## 7. Results and Visualizations
+## 7. Application Screenshots
 
-The following screenshots demonstrate the user interface and different functionalities of the Study Mate application.
+The following screenshots show the main interfaces of Study Mate and its implemented features.
 
 ### 7.1 Dashboard
 
@@ -142,11 +123,11 @@ The following screenshots demonstrate the user interface and different functiona
 
 ![Exam Countdown](screenshots/exam%20countdown.png)
 
-### 7.5 Calendar
+### 7.5 Task Calendar
 
 ![Academic Calendar](screenshots/calender.png)
 
-### 7.6 Subjects
+### 7.6 Subject Management
 
 ![Subjects](screenshots/subjects.png)
 
@@ -154,14 +135,21 @@ The following screenshots demonstrate the user interface and different functiona
 
 ![Productivity Analytics](screenshots/analytics.png)
 
-## 8. Discussion
+## 8. Application Development and Distribution
 
-Study Mate provides a centralized solution for managing academic activities. Its desktop-based design allows students to access their planning tools from their computers, while local storage keeps their information on their own devices.
+Study Mate is developed using Electron.js and is configured with Electron Builder for application packaging.
 
-The application brings together task management, study planning, examination tracking, and productivity monitoring in one system.
+The project includes build configurations for the following operating systems:
 
-## 9. Conclusion
+| Platform | Package Formats |
+|---|---|
+| Windows | NSIS installer (`.exe`) |
+| macOS | DMG (`.dmg`) and ZIP (`.zip`) |
+| Linux | AppImage (`.AppImage`) and Debian package (`.deb`) |
 
-Study Mate demonstrates how a desktop application can help students organize their academic responsibilities more effectively. It combines several useful study management features in one simple application.
+GitHub Actions is configured to automate the application build process for the supported platforms.
 
-The project also provides practical experience in developing a desktop application using HTML, CSS, JavaScript, and Electron.js.
+## 9. Repository
+
+**GitHub:** [Student Academic Task Organizer](https://github.com/Arusha-Meftabin/Student-Academic-Task-Organizer)
+
